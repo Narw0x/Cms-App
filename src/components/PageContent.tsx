@@ -22,11 +22,13 @@ function PageContent() {
         config.sidebar.find(item => item.id === page.id && item.active)
     ) || config.pages[0] || { id: "no-page", title: "No Page", content: "No content available" };
 
+
+
     return (
         <div className="flex-1 p-8">
             <h1 className="text-3xl font-bold mb-4">{activePage.title}</h1>
             <p>{activePage.content}</p>
-            { activePage.id === "settings" && (<ConfigPanel/>) }
+            {activePage.id === "settings" && <ConfigPanel />}
         </div>
     );
 }

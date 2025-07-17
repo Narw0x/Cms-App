@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
+import Chat from "./Chat.tsx";
 
 // Define interface for SidebarItem to ensure type consistency
 interface SidebarItem {
@@ -30,9 +31,9 @@ function Sidebar() {
     };
 
     return (
-        <div className="w-64 bg-gray-800 text-white h-screen p-4">
+        <div className="w-64 bg-gray-800 text-white h-screen p-4 flex flex-col">
             <h2 className="text-xl font-bold mb-4">Navigation</h2>
-            <ul>
+            <ul className="flex-1">
                 {config.sidebar.map((item: SidebarItem) => (
                     <li key={item.id}>
                         <button
@@ -46,6 +47,9 @@ function Sidebar() {
                     </li>
                 ))}
             </ul>
+            <div className="mt-auto">
+                <Chat />
+            </div>
         </div>
     );
 }
